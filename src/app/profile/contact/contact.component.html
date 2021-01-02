@@ -34,7 +34,11 @@
                         <div class="row mb-3">
                           <div class="col">
                             <div class="input-group">
-                              <input class="form-control" type="text" name="email"  #email placeholder="E-mail"
+                              <input 
+                              class="form-control" 
+                              type="email" 
+                              name="email"  
+                              #email placeholder="E-mail"
                                 [(ngModel)]="model.email" #email="ngModel"
                                 [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
                                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required />

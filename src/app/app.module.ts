@@ -15,6 +15,7 @@ import { MatCardModule } from "@angular/material/card";
 import { AngularMaterialModule } from './angular-material.module';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogServiceModule } from 'dialog-service';
 
 
 
@@ -46,7 +47,8 @@ const config: ExtraOptions = {
     MatCardModule,
     MatSliderModule,
     MatDialogModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    MatDialogServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent],

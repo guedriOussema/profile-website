@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders} from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DialogService } from 'dialog-service';
 
 
 @Component({
@@ -12,11 +14,14 @@ import { HttpHeaders} from '@angular/common/http';
  
     model: any = {};
   
+    form:FormGroup;
     constructor(
-      private http: HttpClient
+      private http: HttpClient,
+      private dialogService: DialogService
     ){}
   
     ngOnInit() {
+      
        }
        onSubmit(name, subject, email, message) {
           const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -24,7 +29,7 @@ import { HttpHeaders} from '@angular/common/http';
             { name: name, subject: subject, replyto: email, message: message },
             { 'headers': headers }).subscribe(
               response => {
-                console.log(response);
+                this.dialogService.withAlert('Sent !');
               }
             );
         }  
