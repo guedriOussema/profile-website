@@ -21,21 +21,6 @@ allProjects: any[] = [
     technologies:'Angular6, Bootstrap4',
     src: 'assets/images/p9.PNG'
   },
-  /*
-  {
-    type: 'web',
-    title:'Online shopping website',
-    technologies:'Angular6, Bootstrap4',
-    src: 'assets/images/p9.jpg'
-  },
-
-  {
-    type: 'web',
-    title:'Online shopping website',
-    technologies:'Angular6, Bootstrap4',
-    src: 'assets/images/p14.PNG'
-  },
-  */
   {
     type: 'web',
     title:'Tunisie Telecom services (Intership)',
