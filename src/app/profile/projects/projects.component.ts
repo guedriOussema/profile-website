@@ -9,6 +9,15 @@ import {MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angula
 export class ProjectsComponent implements OnInit {
 
 allProjects: any[] = [
+
+  {
+    type: 'web',
+    title:'Notes App using Angular',
+    technologies:'Angular10',
+    src: 'assets/images/p23.PNG',
+    url:'https://guedrioussema.github.io/NotesAppFrontend/'
+  },
+
   {
     type: 'web',
     title:'Trello board using Angular5',
@@ -39,6 +48,8 @@ allProjects: any[] = [
     technologies:'Python',
     src: 'assets/images/p22.png'
   },
+
+  
  
   
 ];

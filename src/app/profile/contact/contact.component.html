@@ -9,7 +9,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="card-body">
-                      <form name="form" (ngSubmit)="f.form.valid ; f.resetForm()" #f="ngForm" novalidate>
+                      <form name="form" (ngSubmit)="f.resetForm()" #f="ngForm" >
                         <div class="p pb-3">
                           <strong>Feel free to contact me </strong>
                         </div>
@@ -21,13 +21,14 @@
                               class="form-control" 
                               type="text" 
                               name="name" 
-                              #name 
                               placeholder="Name"
                               [(ngModel)]="model.name" 
                               #name="ngModel"
-                              [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
+                              [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" 
+                              required />
 
                             </div>
+                            <span *ngIf="name.touched && name.invalid"><p class="pError">This field is required.</p></span>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -42,7 +43,7 @@
                               placeholder="Subject"
                               [(ngModel)]="model.subject" 
                               #subject="ngModel"
-                              [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }" required />
+                              [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }"/>
 
                             </div>
                           </div>
@@ -54,32 +55,40 @@
                               class="form-control" 
                               type="email" 
                               name="email"  
-                              #email 
+                              email
+                              required 
                               placeholder="E-mail"
                               [(ngModel)]="model.email" 
                               #email="ngModel"
                               [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
                               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required />
                             </div>
+                            <span *ngIf="email.touched && email.invalid && email.pristine"><p class="pError">This field is required.</p></span>
+                            <span *ngIf="email.touched && email.invalid && email.dirty"><p class="pError">Please enter a valid email.</p></span>
                           </div>
                         </div>
+                    
                         <div class="row mb-3">
                           <div class="col">
                             <div class="form-group">
                               <textarea 
                               class="form-control" 
                               name="message" 
-                              #message 
                               placeholder="Your Message"
                               [(ngModel)]="model.message" 
                               #message="ngModel"
                               [ngClass]="{ 'is-invalid': f.submitted && message.invalid }" required></textarea>
                             </div>
+                            <span *ngIf="message.touched && message.invalid"><p class="pError">Please enter your message.</p></span>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col">
-                            <button class="btn btn-primary" type="submit" (click)="onSubmit(name.value, subject.value, email.value, message.value)"> Send</button>
+                            <button 
+                            class="btn btn-primary" 
+                            type="submit" 
+                            (click)="onSubmit(name.value, subject.value, email.value, message.value)"
+                            [disabled]="!f.valid"> Send</button>
                           </div>
                         </div>
                       </form>
