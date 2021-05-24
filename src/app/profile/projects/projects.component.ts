@@ -11,11 +11,25 @@ export class ProjectsComponent implements OnInit {
 allProjects: any[] = [
 
   {
+    type: 'Web interface/Deep learning',
+    title:'Digits handwritten classification interface',
+    technologies:'Tensorflow, Keras, CNN, Flask',
+    src: 'assets/images/p25.PNG'
+  },
+
+  {
+    type: 'app',
+    title:'AI project: Taquin game using A* algorithm',
+    technologies:'Python',
+    src: 'assets/images/p22.png'
+  },
+
+  {
     type: 'web',
-    title:'Notes App using Angular',
-    technologies:'Angular10',
-    src: 'assets/images/p23.PNG',
-    url:'https://guedrioussema.github.io/NotesAppFrontend/'
+    title:'WebRTC application (A video confering website similar to zoom)',
+    technologies:'Angular, NodeJS, ExpressJS, MongoDB, Soket.io',
+    src: 'assets/images/p21.PNG',
+    url:'https://guedrioussema.github.io/WebRTC/'
   },
 
   {
@@ -41,12 +55,6 @@ allProjects: any[] = [
     title:'Sensor application (Final year)',
     technologies:'Ionic4, Bootstrap4,Firebase',
     src: 'assets/images/p19.png'
-  },
-  {
-    type: 'app',
-    title:'AI project: Taquin game using A* algorithm',
-    technologies:'Python',
-    src: 'assets/images/p22.png'
   },
 
   
